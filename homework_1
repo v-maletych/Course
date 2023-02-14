@@ -6,21 +6,14 @@ print(number_1+number_2)
 
 #EXERCISE_2
 
-#take a max number
-num_max=input("Enter numbers from the lowest till the largest across the coma: ")
-largest_number=num_max[0]
-for number in num_max:
-    if number>largest_number:
-        largest_number=number
-print(largest_number)
-
-#take a min number
-num_min=input("Enter numbers from the lowest till the largest across the coma: ")
-lowest_number=num_min[0]
-for number_min in num_min:
-    if number_min<lowest_number:
-        lowest_number==number_min
-print(lowest_number)
+number=int(input("How many numbers will you use: "))
+list=[]
+for num in range(number):
+    list.append(int(input(":")))
+list_2=sorted(list)
+print(sorted(list))
+print("Minimum:",list_2[0])
+print("Maximum:",list_2[-1])
 
 #EXERCISE_3
 
