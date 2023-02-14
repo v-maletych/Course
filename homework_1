@@ -1,11 +1,13 @@
 #EXERCISE_1
 
-print(2+2)
+number_1=float(input("Enter first number: "))
+number_2=float(input("Enter second_number: "))
+print(number_1+number_2)
 
 #EXERCISE_2
 
 #take a max number
-num_max=[1,2,3,4,5,6,7,8,9]
+num_max=input("Enter numbers in range from the lowest till the largest and across the coma: ")
 largest_number=num_max[0]
 for number in num_max:
     if number>largest_number:
@@ -13,7 +15,7 @@ for number in num_max:
 print(largest_number)
 
 #take a min number
-num_min=[1,2,3,4,5,6,7,8,9]
+num_min=input("Enter numbers in range from the lowest till the largest and across the coma: ")
 lowest_number=num_min[0]
 for number_min in num_min:
     if number_min<lowest_number:
@@ -22,6 +24,6 @@ print(lowest_number)
 
 #EXERCISE_3
 
-world="hello"
+world=input("Enter a world: ")
 reversed="".join(reversed(world))
 print(reversed)
