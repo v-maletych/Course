@@ -7,7 +7,7 @@ print(number_1+number_2)
 #EXERCISE_2
 
 #take a max number
-num_max=input("Enter any numbers across the coma: ")
+num_max=input("Enter numbers from the lowest till the largest across the coma: ")
 largest_number=num_max[0]
 for number in num_max:
     if number>largest_number:
@@ -15,7 +15,7 @@ for number in num_max:
 print(largest_number)
 
 #take a min number
-num_min=input("Enter any numbers across the coma: ")
+num_min=input("Enter numbers from the lowest till the largest across the coma: ")
 lowest_number=num_min[0]
 for number_min in num_min:
     if number_min<lowest_number:
