@@ -1,0 +1,16 @@
+ask_currency=input("Choose the currency which you want to exchange in UAH:\n\n1. EUR\n2. USD\n\nYour choice: ")
+if ask_currency=='1':
+    ask_suma = float(input("\nType a suma which you want to exchange in UAH: "))
+    eur = float(40)
+    uah = ask_suma
+    print("\nYou will get:",eur * uah)
+    input()
+elif ask_currency=="2":
+    ask_suma=float(input("\nType a suma which you want to exchange in UAH: "))
+    usd=float(38)
+    uah=ask_suma
+    print("\nYou will get:",usd*uah)
+    input()
+else:
+    print(input("You have just typed uncorrect value! Restart the program!"))
+    input()
