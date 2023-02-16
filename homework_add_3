@@ -1,0 +1,14 @@
+currency = {'EUR': 40, 'USD': 38, 'FUNT': 45}
+a=input("Currencies that I will count for you:\n1. EUR\n2. USD\n3. FUNT\n(print Enter please)")
+sum=float(input("\nEnter sum in UAH: "))
+for k,v in currency.items():
+    if k=='EUR':
+        currency[k]=print("You will have:",sum/v,"€")
+    elif k=='USD':
+        currency[k]=print("You will have:",sum/v,"$")
+    elif k=='FUNT':
+        currency[k]=print("You will have:",sum/v,"£")
+    else:
+        print("Something has just gone wrong! Restart the program!")
+        input()
+input()
