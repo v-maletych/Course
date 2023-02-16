@@ -1,9 +1,9 @@
-ask_currency=input("Choose the currency which you want to exchange in UAH:\n\n1. EUR\n2. USD\n\nYour choice: ")
+ask_currency=input("Choose the currency which you want to exchange in UAH:\n\n1. EUR\n2. USD\n\nYour choice: ")#here program ask user which the currency you want to exchange in uah 
 if ask_currency=='1':
-    ask_suma = float(input("\nType a suma which you want to exchange in UAH: "))
+    ask_suma = float(input("\nType a suma which you want to exchange in UAH: "))#here user must type a suma whisch you want to exchange
     eur = float(40)
     uah = ask_suma
-    print("\nYou will get:",eur * uah)
+    print("\nYou will get:",eur * uah)#here user gets a result
     input()
 elif ask_currency=="2":
     ask_suma=float(input("\nType a suma which you want to exchange in UAH: "))
@@ -12,5 +12,5 @@ elif ask_currency=="2":
     print("\nYou will get:",usd*uah)
     input()
 else:
-    print(input("You have just typed uncorrect value! Restart the program!"))
+    print(input("You have just typed uncorrect value! Restart the program!"))#its a function works if something doesnt work
     input()
