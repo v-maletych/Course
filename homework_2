@@ -34,3 +34,4 @@ if email in emails:
     print("This Email adress has already used")
 else:
     print("You can register this Email adress:",email)
+input()
