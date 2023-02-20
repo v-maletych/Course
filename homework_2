@@ -1,0 +1,36 @@
+#first homework
+import re
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+def check(email_2):
+	if(re.fullmatch(regex, email_2)):
+		print("Valid Email")
+	else:
+		print("Invalid Email")
+if __name__ == '__main__':
+	email_2 = input("Enter Email adress: ")
+	check(email_2)
+input()
+
+
+#second homework
+people = {1: {"Name": "First human"},2: {"Name": "Second human"},3: {"Name": "Third human"}}
+def person():
+    person_id = int(input("Enter ID of human which you want to edit: "))
+    if person_id in people:
+        new_name = input("Enter new name: ")
+        people[person_id]["Name"] = new_name
+        print(f"Information about human updated.")
+    else:
+        print(f"ID of human {person_id} didn't find.")
+person()
+print(people)
+input()
+
+
+#third homework
+emails = ["lub.luznyy@vnv.com", "adrew_kotyk@gmail.com", "maks@gmail.com"]
+email = input("Enter Email adress: ")
+if email in emails:
+    print("This Email adress has already used")
+else:
+    print("You can register this Email adress:",email)
