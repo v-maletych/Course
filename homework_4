@@ -1,0 +1,239 @@
+#first exercise
+
+
+import re
+
+
+class Plant:
+    plants = []
+
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+    def save(self):
+        Plant.plants.append(self)
+        print("Plant added successfully!")
+
+    @classmethod
+    def get_all_plants(cls):
+        if len(Plant.plants) == 0:
+            print("No plants found!")
+        else:
+            for plant in Plant.plants:
+                print("Name:", plant.name)
+                print("Address:", plant.address)
+                print()
+
+
+class Employee:
+    employees = []
+
+    def __init__(self, name, email, plant_id):
+        self.name = name
+        self.email = email
+        self.plant_id = plant_id
+
+    def save(self):
+        Employee.employees.append(self)
+        print("Employee added successfully!")
+
+    @classmethod
+    def get_all_employees(cls):
+        if len(Employee.employees) == 0:
+            print("No employees found!")
+        else:
+            for employee in Employee.employees:
+                print("Name:", employee.name)
+                print("Email:", employee.email)
+                print("Plant ID:", employee.plant_id)
+                print()
+
+
+def is_valid_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(pattern, email) is not None
+
+
+while True:
+    print("1. Add Plant\n2. Gel all plants\n3. Add Employee\n4. Get all employees")
+    flag = int(input("Choose menu item: "))
+    if flag == 1:
+        name = input("Plant name: ")
+        address = input("Plant address: ")
+        plant = Plant(name, address)
+        plant.save()
+    elif flag == 2:
+        Plant.get_all_plants()
+    elif flag == 3:
+        name = input("Employee name: ")
+        email = input("Employee email: ")
+        while not is_valid_email(email):
+            print("Invalid email address. Please try again.")
+            email = input("Employee email: ")
+        plant_id = int(input("Plant id: "))
+        employee = Employee(name, email, plant_id)
+        employee.save()
+    elif flag == 4:
+        Employee.get_all_employees()
+
+
+
+
+#-----------------------------------------------------------------------------------------------------------
+
+
+
+#second exercise
+
+
+import json
+
+
+class Plant:
+    file = "database/plants.json"
+
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+    def generate_dict(self):
+        return {
+            "name": self.name,
+            "address": self.address
+        }
+
+    def save(self):
+        self.get_all_plants()
+        file = open(self.file, "r")
+        plants = json.loads(file.read())
+        file.close()
+        file = open(self.file, "w")
+        plant = self.generate_dict()
+        if len(plants) > 1:
+            plant["id"] = len(plants) + 1
+        else:
+            plant["id"] = 1
+        plants.append(plant)
+        file.write(json.dumps(plants))
+        file.close()
+
+    @classmethod
+    def get_all_plants(cls):
+        file = open(cls.file, "r")
+        plants = json.loads(file.read())
+        file.close()
+        for plant in plants:
+            print(plant["name"])
+            print(plant["address"])
+
+    @classmethod
+    def get_plant_by_id(cls, id):
+        file = open(cls.file, "r")
+        plants = json.loads(file.read())
+        file.close()
+        for plant in plants:
+            if plant["id"] == id:
+                return cls(plant["name"], plant["address"])
+        return None
+
+    def update(self):
+        file = open(self.file, "r")
+        plants = json.loads(file.read())
+        file.close()
+        for i in range(len(plants)):
+            if plants[i]["id"] == self.id:
+                plants[i]["name"] = self.name
+                plants[i]["address"] = self.address
+                file = open(self.file, "w")
+                file.write(json.dumps(plants))
+                file.close()
+                return True
+        return False
+
+
+class Employee:
+    file = "database/employees.json"
+
+    def __init__(self, name, email, plant_id):
+        self.name = name
+        self.email = email
+        self.plant_id = plant_id
+
+    def generate_dict(self):
+        return {
+            "name": self.name,
+            "email": self.email,
+            "plant_id": self.plant_id
+        }
+
+    def save(self):
+        file = open(self.file, "r")
+        employees = json.loads(file.read())
+        file.close()
+        file = open(self.file, "w")
+        employee = self.generate_dict()
+        if len(employees) > 1:
+            employee["id"] = len(employees) + 1
+        else:
+            employee["id"] = 1
+        employees.append(employee)
+        file.write(json.dumps(employees))
+        file.close()
+
+    @classmethod
+    def get_all_employees(cls):
+        file = open(cls.file, "r")
+        employees = json.loads(file.read())
+        file.close()
+        for employee in employees:
+            print(employee["name"])
+            print(employee["email"])
+            print(employee["plant_id"])
+
+    @classmethod
+    def update_employee(cls, employee_id, name=None, email=None, plant_id=None):
+        file = open(cls.file, "r")
+        employees = json.loads(file.read())
+        file.close()
+        for employee in employees:
+            if employee["id"] == employee_id:
+                if name is not None:
+                    employee["name"] = name
+                if email is not None:
+                    employee["email"] = email
+                if plant_id is not None:
+                    employee["plant_id"] = plant_id
+                file = open(cls.file, "w")
+                file.write(json.dumps(employees))
+                file.close()
+                return True
+        return False
+    
+    
+    
+#-----------------------------------------------------------------------------------------------------------
+
+
+
+#third exercise
+
+
+def print_hello():
+    print("Hello")
+
+def print_world():
+    print("World")
+
+
+class Greeting:
+    def print_hello(self):
+        print("Hello")
+
+    def print_world(self):
+        print("World")
+
+
+greeting = Greeting()
+greeting.print_hello()
+greeting.print_world()
