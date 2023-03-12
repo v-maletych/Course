@@ -1,0 +1,12 @@
+1. SELECT * FROM employees;
+2. SELECT * FROM employees WHERE first_name = 'David';
+3. SELECT * FROM employees WHERE departament_id = 20 AND departament_id = 30;
+4. SELECT * FROM employees WHERE departament_id (50, 80) AND comission_pct IS NOT NULL;
+5. SELECT * FROM employees WHERE DATE FORMAT(hire_date, '%d') = '01';
+6. SELECT * FROM Employees WHERE YEAR(hire_date) = 2008;
+7. SELECT CONCAT('Tomorrow is ', DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 1 DAY), '%M %D')) AS tomorrow FROM DUAL;
+8. SELECT CONCAT(DATE_FORMAT(hire_date, '%D %M, %Y')) AS hire_date FROM Employees;
+9. SELECT CONCAT('$ ', FORMAT((salary * (1 + IFNULL(commission_pct, 0))), 2)) AS full_salary FROM Employees;
+10. SELECT * FROM Employees WHERE hire_date BETWEEN '2007-02-01' AND '2007-02-28';
+11. SELECT NOW() AS current_date, DATE_ADD(NOW(), INTERVAL 1 SECOND) AS next_second, DATE_ADD(NOW(), INTERVAL 1 MINUTE) AS next_minute, DATE_ADD(NOW(), INTERVAL 1 HOUR) AS next_hour, DATE_ADD(NOW(), INTERVAL 1 DAY) AS next_day, DATE_ADD(NOW(), INTERVAL 1 MONTH) AS next_month, DATE_ADD(NOW(), INTERVAL 1 YEAR) AS next_year FROM DUAL;
+12. SELECT CONCAT('$ ', FORMAT((salary * (1 + IFNULL(commission_pct, 0))), 2)) AS full_salary, CASE WHEN commission_pct IS NOT NULL THEN 'Yes' ELSE 'No' END AS has_bonus FROM Employees;
