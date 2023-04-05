@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'main/base.html' %}
+
+  {% block title %}
+  All Articles
+  {% endblock %}
+
+  {% block body %}
+  <main class="container">
+    <div class="card">
+    <div class="card-header">
+      All Articles
+    </div>
+      {% for article in articles %}
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">{{article.title }}</strong>
+            <a href="/article/{{ article.id }}">Read More</a>
+          </div>
+          <span class="d-block">{{article.body }}</span>
+        </div>
+      </div>
+    </div>
+      {% endfor %}</div>
+  </main>
+
+  {% endblock %}
+
+  <div class="card text-bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"></div>
+          <h5 class="card-title">Primary card title</h5>
+
+    <div class="card-body">
+    </div></div>
+</body>
+</html>
