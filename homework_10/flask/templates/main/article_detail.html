@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'main/base.html' %}
+
+    {% block title %}
+    Article id
+    {% endblock %}
+
+    {% block body %}
+        <div class="container card text-center">
+          <div class="text-bg-light mb-3" style="max-width: 100rem;">
+            <div class="card-header">Your Article</div>
+              <h1>{{article.title }}</h1>
+              <p>{{article.body }}</p>
+            </div><hr>
+            <div class="d-grid gap-2">
+             <a href="/all" class="btn btn-primary" type="button">Back</a>
+            </div>
+          </div>
+        </div>
+
+    {% endblock %}
+</body>
+</html>
