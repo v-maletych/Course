@@ -1,1 +1,21 @@
+.navbar-brand {
+    color: white;
+}
 
+
+.card-body {
+    color: white;
+    background-color: black;
+}
+
+
+
+.navbar-toggler {
+    color: white;
+}
+
+
+
+body {
+    background-image: url("https://img.freepik.com/free-photo/volume-abstract-graphic-loneliness-desk_1258-258.jpg?w=996&t=st=1680682437~exp=1680683037~hmac=21962e04ce69e37e2f13baf2918e382b26df4e89a1f13b3bc9c261cb44637546")
+}
