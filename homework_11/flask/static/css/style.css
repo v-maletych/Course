@@ -1,0 +1,10 @@
+.paragraph {
+    color: blue;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: Didot;
+}
+
+body {
+    background-image: url("https://img.freepik.com/free-vector/geometric-background_53876-115958.jpg?w=996&t=st=1680874566~exp=1680875166~hmac=34bc2f1c3b7e2fdb30586b6eb511d41fb7a6bd6a9703bddfe313d3de2be59239")
+}
