@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div>
+        {% for article in articles %}
+        <div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.body }}</p>
+            <p><a href="/article/{{ article.id }}">Read More</a></p>
+            <p><a href="/article/{{ article.id }}/edit">Edit</a></p>
+            <p><a href="/article/{{ article.id }}/delete">Delete</a></p>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+{% endblock %}
