@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: "docker"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+
+
+  app:
+    build:
+      dockerfile: ./docker/python/Dockerfile
+      context: "./"
+    ports:
+      - 9000:5000
+    volumes:
+      - ./:/app
